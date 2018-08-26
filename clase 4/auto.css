@@ -1,0 +1,27 @@
+.auto{
+    width:600px;
+    height:200px;
+    position: relative;
+    top:100px;
+    left:200px;
+    background:gray;
+}
+
+[class^="rueda"]{
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(0deg,blue,red,yellow);
+    border-radius: 50%;
+    position: absolute;
+    top:150px;
+    transition: transform 2s linear;
+}
+
+.rueda1{left: 40px;}
+
+.rueda2{right: 40px;}
+
+.auto:hover .rueda1{transform: rotate(360deg);}
+
+/*Para que gire mas rapido y en sentido inverso*/
+.auto:hover .rueda2{transform: rotate(-720deg);}

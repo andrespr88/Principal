@@ -1,13 +1,13 @@
 body{
     margin: 0;
     padding: 0;
-
 }
 
 .sistema{
     height: 600px;
     width: 600px;
     position: relative;
+    left: 25vw;
     background: black;
 }
 
@@ -16,43 +16,34 @@ body{
     height: 200px;
     position: absolute;
     top:50%;
-    margin-top:-100px;
     left:50%;
+    margin-top:-100px;
     margin-left:-100px;
     background: url("http://assets.stickpng.com/thumbs/580b585b2edbce24c47b270f.png");
     background-size: cover;
     border-radius: 50%;
 }
 
-.tamaño{
-    width: 200px;
-    height: 200px;
-}
-
 .orbita{
     height: 500px;
     width: 500px;
     top: 50%;
-    margin-top:  -250px;
     left: 50%;
+    margin-top: -250px;
     margin-left: -250px;
-    border-radius: 50%;
     border: solid 2px white;
+    border-radius: 50%;
     position: absolute;
     transition: transform 20s linear;
 }
 
-.sistema:hover .orbita{
-    transform: rotate(720deg);
-}
-
+.sistema:hover .orbita{transform: rotate(720deg);}
 
 .tierra{
     width: 80px;
     height: 80px;
     background: url("https://www.flapane.com/img/pianeta_terra.png");
     background-size: cover;
-    border-radius: 50%;
     position: absolute;
     top: 50%;
     margin-top: -40px;
@@ -60,8 +51,5 @@ body{
     transition: transform 20s linear;
 }
 
-
-.sistema:hover .tierra{
-    transform: rotate(1500deg);
-}
+.sistema:hover .tierra{transform: rotate(1440deg);}
 
