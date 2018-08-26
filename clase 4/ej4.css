@@ -1,0 +1,16 @@
+.menu .abierto{
+    width: 0px;
+    height:0px;
+    visibility:hidden;
+    background: black;
+    transition-property: all; /*color, background, --- all*/
+    transition-duration: 0.3s; /*tiempo de transicion*/
+    transition-timing-function: linear; / *efecto de transicion*/
+    transition-delay: 0; /*delay o tiempo de espera para iniciar*/
+}
+
+.menu:hover .abierto{
+    width: 200px;
+    height: 200px;
+    visibility:visible;
+}

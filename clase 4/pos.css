@@ -1,0 +1,56 @@
+*{
+	box-sizing: border-box;
+}
+
+html,body{
+	margin:0;
+	padding: 0;
+}
+
+.contenedor{
+	overflow:auto;
+	margin:10px;
+}
+
+.cuadrado{
+	margin:5px;
+	float:left;
+	height: 100px;
+	width: 150px;
+	background: blue;
+}
+
+.circulo{
+	margin:5px;
+	float:right;
+	border-radius: 50%;
+	height: 100px;
+	width: 100px;
+	background: blue;
+}
+
+
+.circulo2{
+	margin:5px;
+	margin-left: 25%;	
+	float:left;
+	border-radius: 50%;
+	height: 100px;
+	width: 100px;
+	background: blue;
+}
+
+.circulo3{
+	margin:5px;
+	margin-right: 29%;	
+	float:left;
+	border-radius: 50%;
+	height: 100px;
+	width: 100px;
+	background: blue;
+}
+
+.circulo3:last-child{
+	float:right;
+	margin-right: 0;
+}

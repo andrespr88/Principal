@@ -1,0 +1,35 @@
+.auto{
+    width:600px;
+    height:200px;
+    position: relative;
+    background:gray;
+}
+
+.rueda{
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(0deg,blue,red,yellow);
+    border-radius: 50%;
+    position: absolute;
+    top:150px;
+    transition-property: all; /*color, background, --- all*/
+    transition-duration: 2s; /*tiempo de transicion*/
+    transition-timing-function: linear; /* efecto de transicion*/
+    transition-delay: 0.3s; /*delay o tiempo de espera para iniciar*/
+}
+
+.rueda1{
+    left: 40px;
+}
+
+.rueda2{
+    right: 40px;
+}
+
+.auto:hover .rueda1{
+    transform: rotate(-360deg);
+}
+
+.auto:hover .rueda2{
+    transform: rotate(360deg);
+}

@@ -1,0 +1,6 @@
+.caja{
+	width: 200px;
+	height: 200px;
+	background: linear-gradient(140deg,red,yellow,blue);
+	/*Deg son los grados; tmb se puede poner to left o to right*/
+}
