@@ -24,21 +24,20 @@ header{
 }
 
 .titulo{
-    padding-top: 22px;
+    padding-top: 24px;
 }
 
 .nombre{
     font-family: 'Diplomata SC', cursive;
     text-align: center;
     background: #000000de;
-    font-size: 1.1rem;
-    letter-spacing: -0.1rem;
+    font-size: 1rem;
     font-style: italic;
     font-weight: normal;
     color: #de0f3d;
 }
 
-main{
+nav{
     position: absolute;
     top: 4px;
     right: 5px;
@@ -56,7 +55,7 @@ main{
     background: linear-gradient(0deg,#000000eb,#9e8d8d52);
     text-align: center;
     overflow: auto;
-    padding-bottom: 0.5em;
+    padding-bottom: 1em;
 }
 
 .equipo h4{
@@ -86,7 +85,7 @@ main{
 }
 
 footer{
-   padding: 0.5em 0em;
+   padding: 0.5em 0.5em;
    overflow: auto;
    background: radial-gradient(#807c7c78,#000000ad);
    color: white;
@@ -95,13 +94,16 @@ footer{
    font-size: 0.8rem;
 }
 
-.footer1{
+footer div{
     float: left;
-    padding-left: 0.6em;
+}
+
+.derecha{
+    float:right;
 }
 
 .redes{    
-    padding: 0.3em;
+    padding: 0.3em 0 0.3em 0.5em;
     font-size: 1.6rem;
     color: #de0f3d;
 }

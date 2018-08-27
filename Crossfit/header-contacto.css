@@ -24,21 +24,20 @@ header{
 }
 
 .titulo{
-    padding-top: 22px;
+    padding-top: 24px;
 }
 
 .nombre{
     font-family: 'Diplomata SC', cursive;
     text-align: center;
     background: #000000de;
-    font-size: 1.1rem;
-    letter-spacing: -0.1rem;
+    font-size: 1rem;
     font-style: italic;
     font-weight: normal;
     color: #de0f3d;
 }
 
-main{
+nav{
     position: absolute;
     top: 4px;
     right: 5px;
