@@ -1,0 +1,34 @@
+.filtro{
+	background: linear-gradient();
+	width: 800px;
+    height:400px;
+}
+
+.auto{
+    width: 800px;
+    height:400px;
+    position:  relative;
+    filter: hue-rotate(70deg);
+    background:url(https://files1.porsche.com/filestore/image/multimedia/none/991-2nd-tus-exc-modelimage-sideshot/model/b1c9a880-3a1d-11e7-9f74-0019999cd470/porsche-model.png);
+    background-size: cover;
+}
+
+[class^="rueda"]{
+    width: 100px;
+    height: 100px;
+    background: url(https://banner2.kisspng.com/20180408/hrw/kisspng-wheel-car-volkswagen-bmw-rim-wheel-rim-5ac9bb51c5b756.3470781115231701298099.jpg) black;
+    background-size: cover;
+    border-radius: 50%;
+    position: absolute;
+    top: 263px;
+    transition: transform 2s linear;
+}
+
+.rueda1{left: 143px;}
+
+.rueda2{right: 138px;}
+
+.auto:hover .rueda1{transform: rotate(360deg);}
+
+/*Para que gire mas rapido y en sentido inverso*/
+.auto:hover .rueda2{transform: rotate(-720deg);}

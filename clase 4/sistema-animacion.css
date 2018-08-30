@@ -1,0 +1,104 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.sistema{
+    height: 600px;
+    width: 600px;
+    position: relative;
+    left: 25vw;
+    background: black;
+}
+
+.sol{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin-top:-100px;
+    margin-left:-100px;
+    background: url("http://assets.stickpng.com/thumbs/580b585b2edbce24c47b270f.png");
+    background-size: cover;
+    border-radius: 50%;
+    animation: 2s fuego linear infinite alternate;
+}
+
+@keyframes fuego{
+    from{filter: hue-rotate(0deg) brightness(90%);}
+    to{filter: hue-rotate(20deg) brightness(100%);}
+}
+
+.orbita{
+    height: 500px;
+    width: 500px;
+    top: 50%;
+    left: 50%;
+    margin-top: -250px;
+    margin-left: -250px;
+    border: solid 2px white;
+    border-radius: 50%;
+    position: absolute;
+    animation-name: traslacion;
+    animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+
+}
+
+@keyframes traslacion{
+    from{transform: rotate(0deg);}
+    to{transform: rotate(720deg);}
+}
+
+.tierra{
+    width: 80px;
+    height: 80px;
+    background: url("https://www.flapane.com/img/pianeta_terra.png");
+    background-size: cover;
+    position: absolute;
+    top: 50%;
+    margin-top: -40px;
+    margin-left: -40px;
+    animation: 2s rotacion infinite linear;
+}
+
+@keyframes rotacion{
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+}
+
+[class^="estrella"]{
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    background: url(http://www.babylonjs-playground.com/textures/sparkle.png);
+    background-size: cover;
+    border-radius: 50%;
+    animation: 2s brillo linear infinite alternate;
+}
+
+@keyframes brillo{
+    from{filter: brightness(90%);}
+    to{filter: brightness(500%);}
+}
+
+.estrella1{
+    top: 205px;
+    left: 205px;
+}
+
+.estrella2{
+    top: 45px;
+    right: 45px;
+}
+.estrella3{
+    bottom: 35px;
+    left: 55px;
+}
+.estrella4{
+    bottom: 85px;
+    right: 75px;
+}

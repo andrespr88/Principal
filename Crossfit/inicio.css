@@ -1,10 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Diplomata+SC|Exo+2');
 
-
 body{
     margin: 0;
     padding: 0;
-    box-sizing:  border-box;
+    box-sizing: border-box;
 }
 
 header{
@@ -52,6 +51,7 @@ nav{
 
 .equipo{
     width: 100%;
+    font-family: 'Diplomata SC', cursive;
     background: linear-gradient(0deg,#000000eb,#9e8d8d52);
     text-align: center;
     overflow: auto;
@@ -59,7 +59,6 @@ nav{
 }
 
 .equipo h4{
-    font-family: 'Diplomata SC', cursive;
     margin: 0.5em;
     font-size: 1rem;
 }
@@ -75,6 +74,25 @@ nav{
     height: 80px;
     border-radius: 50%;
     background: #de0f3d;
+    transition: transform 1.5s ease;
+}
+
+div:hover .persona{
+    transform: rotateY(360deg) scale(1.2);
+}
+
+.equipo p{
+    font-family: "Exo 2";
+    color: white;
+    visibility: hidden;
+    transition: all 1.5s ease;
+    font-size: 0;
+}
+
+div:hover p{
+    font-size: 1.2rem;
+    visibility: visible;
+    transform: rotateY(360deg);
 }
 
 
@@ -106,4 +124,5 @@ footer div{
     padding: 0.3em 0 0.3em 0.5em;
     font-size: 1.6rem;
     color: #de0f3d;
+    transition: transform 1s linear; 
 }
