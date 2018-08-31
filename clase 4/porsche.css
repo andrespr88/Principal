@@ -1,6 +1,6 @@
 .filtro{
-	background: linear-gradient();
-	width: 800px;
+    background: linear-gradient();
+    width: 800px;
     height:400px;
 }
 
@@ -8,25 +8,30 @@
     width: 800px;
     height:400px;
     position:  relative;
-    filter: hue-rotate(70deg);
     background:url(https://files1.porsche.com/filestore/image/multimedia/none/991-2nd-tus-exc-modelimage-sideshot/model/b1c9a880-3a1d-11e7-9f74-0019999cd470/porsche-model.png);
     background-size: cover;
 }
 
+.auto:hover{
+    filter: hue-rotate(190deg) saturate(300%) brightness(80%);
+    box-shadow: 0 0 black;
+}
+
 [class^="rueda"]{
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     background: url(https://banner2.kisspng.com/20180408/hrw/kisspng-wheel-car-volkswagen-bmw-rim-wheel-rim-5ac9bb51c5b756.3470781115231701298099.jpg) black;
     background-size: cover;
     border-radius: 50%;
     position: absolute;
-    top: 263px;
+    top: 253px;
     transition: transform 2s linear;
+    filter: hue-rotate(230deg) saturate(2000%) brightness(20%);
 }
 
-.rueda1{left: 143px;}
+.rueda1{left: 131px;}
 
-.rueda2{right: 138px;}
+.rueda2{right: 127px;}
 
 .auto:hover .rueda1{transform: rotate(360deg);}
 
