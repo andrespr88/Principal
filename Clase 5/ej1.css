@@ -1,0 +1,66 @@
+*{
+    box-sizing: border-box;
+}
+
+body,html{
+    margin:0;
+    font-size:16px;
+}
+
+.header{
+    overflow: auto;
+    background: #ccc;
+    padding:20px ;
+    position: fixed;
+   width: 100%;
+   top: 0px;
+}
+
+.logo{
+   width: 70px;
+}
+
+.menu{
+    font-size: 40px;
+   float: right;
+    margin-top: 15px;
+}
+
+.banner{
+  background: url("perro.png");
+  height: 250px;
+  margin-top: 95px;
+  background-size: cover;
+}
+
+.footer div{
+    float:left;
+    width: 33.3%;
+    height: 200px;
+    text-align: center;
+   color: #fff;
+   font-size: 2.5rem;
+   padding-top: 75px;
+}
+
+.footer div:last-child{
+    background: red;
+}
+
+.footer div:first-child{
+    background: blue;
+}
+
+
+.footer div:nth-child(2){
+    background: linear-gradient(0deg, #9C27B0,#ffc000);
+}
+
+.parrafo1{
+    padding: 30px;
+   text-align: center;
+   background: gray;
+   color: #fff;
+   font-size: 1.1rem;
+   font-family: verdana;
+}
