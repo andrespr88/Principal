@@ -42,7 +42,7 @@ body{
     border: solid 2px white;
     border-radius: 50%;
     position: absolute;
-    animation: rotacion 10s linear infinite;
+    animation: rotacion 15s linear infinite;
 }
 
 .tierra{
@@ -66,7 +66,7 @@ body{
     /* border: solid 2px white; */
     border-radius: 50%;
     position: absolute;
-    animation: rotacion 4s linear infinite;
+    animation: rotacion 5s linear infinite;
 }
 
 .luna{
@@ -78,7 +78,7 @@ body{
     top: 50%;
     margin-top: -20px;
     margin-left: -20px;
-    animation: 3s rotacion infinite linear;
+    animation: 4s rotacion infinite linear;
 }
 
 @keyframes rotacion{
