@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css?family=Arima+Madurai');
+
+*{
+	box-sizing: border-box;
+}
+
+body,html{
+  margin: 0;
+  padding: 0; 
+}
+
+.container{
+	display: grid;
+	grid-template-rows: repeat(4, auto);
+	grid-template-columns: repeat(6, auto);
+}
+
+
+.header{
+	display: grid;
+	background: url(beer.png);
+	padding: 10px;
+	font-size: 1.5rem;
+	grid-column: 1 / 7;
+	grid-template-columns: 1fr 1fr;
+}
+
+.logo{
+	width: 70px;
+	height: 70px;
+	justify-self: start;
+}
+
+.menu{justify-self: end; align-self: center;}
+
+.menu a{
+	text-decoration: none;
+	color: black;
+	font-family: 'Arima Madurai', cursive;
+}
+
+.hamburguesa{
+	display: none;
+}
+
+
+@media screen and (max-width: 350px){
+	.header{
+		position: fixed;
+		top:0;
+		width: 100%;
+	}
+
+	.menu{position:relative;}
+
+	.menu span{display: none;}
+
+	.hamburguesa{display: block;}
+
+	.menu_oculto{
+		visibility: hidden;
+	    display: flex;
+	    flex-direction: column;
+	    position: absolute;
+	    /*top: 0;*/
+	    right: 0;
+	    overflow: hidden;
+	    text-align: center;
+	    height: 0;
+	    width: 0;
+	    transition: 1s;
+	    background: linear-gradient(0deg,#4343ea,#f34343);
+	}
+
+	.menu_oculto a{
+		border:1px solid black;
+		padding: 2px;
+		flex: 1;
+	}
+
+	.menu:hover .menu_oculto{
+	    visibility: visible;
+   		height: 100px;
+    	width: 110px;
+	}
+
+}
+
