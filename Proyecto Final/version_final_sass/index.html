@@ -3,7 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>Valinor</title>
+	<link rel="shortcut icon" href="img/favicon.png">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/style.css">
 </head>
@@ -19,7 +20,7 @@
 			<div class="espuma"></div>
 			<div class="goteo"></div>
 		</div>
-		  
+		<p class="header_titulo hidden_tablet">Valinor</p>		  
         <div class="bubble"></div>
         <div class="bubble"></div>
         <div class="bubble"></div>
@@ -32,21 +33,26 @@
         <div class="bubble"></div>
         <div class="bubble"></div>
         <div class="bubble"></div>
-		<nav class="menu">
+        <nav class="menu_general hidden_tablet">
+        	<a href="#historia">Nosotros</a>
+	       	<a href="#contenedor_cervezas">Cervezas</a>
+	       	<a href="#contacto">Contacto</a>
+        </nav>
+		<nav class="menu_hamburguesa hidden_desktop">
 			<div class="servir"></div>
 			<i class="fas fa-bars hamburguesa">
 	        </i>
 			<div class="menu_oculto">
 	       		<a href="#">Inicio</a>
-	       		<a href="#">Nosotros</a>
+	       		<a href="#historia">Nosotros</a>
 	       		<a href="#contenedor_cervezas">Cervezas</a>
-	       		<a href="#">Contacto</a>
+	       		<a href="#contacto">Contacto</a>
 	       	</div>
 		</nav>
 	</header>
 
 	<main id="historia">
-		<h3>Historia</h3>
+		<p class="titulo">Historia</p>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est incidunt nihil sapiente deserunt natus veniam possimus tenetur ratione. Excepturi quasi, sit ipsa corrupti suscipit molestias ad aut nesciunt cumque sint!</p>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est incidunt nihil sapiente deserunt natus veniam possimus tenetur ratione. Excepturi quasi, sit ipsa corrupti suscipit molestias ad aut nesciunt cumque sint!</p>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est incidunt nihil sapiente deserunt natus veniam possimus tenetur ratione. Excepturi quasi, sit ipsa corrupti suscipit molestias ad aut nesciunt cumque sint!</p>
@@ -54,7 +60,7 @@
 	</main>
 
 	<section id="contenedor_cervezas">
-		<h3>Nuestras Cervezas</h3>		
+		<p class="titulo">Nuestras Cervezas</p>		
 		<div class="cervezas">
 			<div class="item">
 				<h4>CREAM ALE</h4>
@@ -105,6 +111,31 @@
 				<p>La graduación alcohólica es de 7 grados. IBUS 43.</p>
 			</div>
 		</div>
+	</section>
+
+	<section id="contacto">
+		<p class="titulo">Contacto</p>
+		<form action="" class="formulario">
+			<div>
+				<input type="text" placeholder="*Nombre" required>
+				<input type="text" placeholder="*Apellido" required>				
+			</div>
+			<div>
+				<input type="email" placeholder="*Email" required>
+			</div>
+			<div>
+				<span>Tengo mas de 18 años</span>          
+		        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="mayor_si">
+		        	<input type="radio" id="mayor_si" class="" name="edad" value="si" required>
+		            <span class="">Si</span>
+		        </label>
+		        <label class="" for="mayor_no">
+		            <input type="radio" id="mayor_no" class="" name="edad" value="no">
+		            <span class="">No</span>
+		        </label>
+	        </div>
+			<input type="submit">
+		</form>
 	</section>
 
 	<footer class="footer">

@@ -1,3 +1,4 @@
+/*resets y estructura general*/
 @import url("https://fonts.googleapis.com/css?family=Indie+Flower");
 @font-face {
   font-family: hot_sweat;
@@ -17,7 +18,7 @@
   background: linear-gradient(to bottom, #bc7012, #efd002);
   /* padding: 0 10px; */
   border-top: 10px solid black; }
-  .header .titulo {
+  .header .header_titulo {
     font-family: "hot_sweat";
     font-size: 3rem;
     font-style: italic;
@@ -99,26 +100,36 @@
   /* width: 80px; */
   /* position: relative; */ }
 
-.menu {
+.menu_general {
+  display: flex;
+  flex-direction: column; }
+  .menu_general a {
+    border: 2px solid;
+    border-radius: 5px;
+    padding: 0.2em;
+    text-decoration: none;
+    color: black; }
+
+.menu_hamburguesa {
   padding: 10px;
   font-family: hot_sweat;
   position: relative;
   font-size: 2rem; }
-  .menu a {
+  .menu_hamburguesa a {
     border: 1px solid black;
     padding: 2px;
     text-decoration: none;
     color: black;
     z-index: 2; }
-  .menu:hover .hamburguesa {
+  .menu_hamburguesa:hover .hamburguesa {
     transform: rotate(-45deg); }
-  .menu:hover .servir {
+  .menu_hamburguesa:hover .servir {
     height: 120px; }
-  .menu:hover .menu_oculto {
+  .menu_hamburguesa:hover .menu_oculto {
     /* visibility: visible; */
     height: auto;
     overflow: visible; }
-    .menu:hover .menu_oculto::after {
+    .menu_hamburguesa:hover .menu_oculto::after {
       height: 155px;
       border-top: 20px solid #ffffffc2; }
 
@@ -183,22 +194,25 @@
 /*Termina el Header*/
 #historia {
   padding: 1em;
-  background: repeating-linear-gradient(0deg, #9e9e9e 30%, #ffffff30 61%), repeating-linear-gradient(300deg, #ffffff 20%, #9e9e9e42 50%), repeating-linear-gradient(15deg, #fff 20%, #9e9e9e 60%);
-  /* background: repeating-linear-gradient(0deg, #9e9e9e 30%, #ffffff30 61%), repeating-linear-gradient(300deg, #ffffff 20%, #9e9e9e42 50%), repeating-linear-gradient(15deg, #fff0 20%, #9e9e9e 60%), repeating-linear-gradient(250deg, #fff0 50%, #9e9e9e 90%);*/
-  background: repeating-linear-gradient(transparent 30%, #8A6F4E 60%), linear-gradient(45deg, #C8AC82 50%, #8A6F4E 60%);
+  background: repeating-linear-gradient(40deg, #9e9e9e 30%, #ffffff30 61%), repeating-linear-gradient(300deg, #ffffff 20%, #9e9e9e42 50%), repeating-linear-gradient(15deg, #fff 20%, #9e9e9e 60%);
+  /* background: repeating-linear-gradient(0deg, #9e9e9e 30%, #ffffff30 61%), repeating-linear-gradient(300deg, #ffffff 20%, #9e9e9e42 50%), repeating-linear-gradient(15deg, #fff0 20%, #9e9e9e 60%), repeating-linear-gradient(250deg, #fff0 50%, #9e9e9e 90%); */
+  /* background: repeating-linear-gradient(transparent 30%, #8A6F4E 60%), linear-gradient(45deg, #C8AC82 50%, #8A6F4E 60%); */
   /* filter: sepia(40%); */ }
+
+.titulo {
+  /*padding-top: 1em;*/
+  font-family: "hot_sweat";
+  font-size: 2rem;
+  border-bottom: 2px dotted;
+  text-align: center; }
 
 /*Empieza Cervezas*/
 /*--------------------------------------------------------------------------*/
 #contenedor_cervezas {
+  padding: 1em;
   background: radial-gradient(circle, #311B92, #00BCD4, #311B92);
-  text-align: center;
   background-size: 80% 50%;
   animation: gradiente 10s infinite; }
-  #contenedor_cervezas h3 {
-    padding-top: 1em;
-    font-size: 2rem;
-    border-bottom: 2px dotted; }
   #contenedor_cervezas .cervezas {
     padding: 2em;
     display: grid;
@@ -217,6 +231,8 @@
   transition: 1.5s; }
   .item:nth-child(odd) {
     background: linear-gradient(to bottom, #71130d, #ae250b); }
+  .item h4 {
+    text-align: center; }
   .item::after {
     	/*content: '';
     		background-color: rgba(255, 255, 255, 0.25);
@@ -242,6 +258,20 @@
     .item:hover .foto_cervezas {
       display: none; }
 
+.formulario {
+  padding: 1em; }
+  .formulario div {
+    width: 50%;
+    display: flex; }
+    .formulario div span {
+      margin-right: 0.5em; }
+    .formulario div input {
+      margin: 0.5em 0.5em 0.5em 0;
+      flex: 1; }
+    .formulario div input:focus {
+      font-size: 1.5rem;
+      border: 2px solid blue; }
+
 .footer {
   display: flex;
   justify-content: space-between;
@@ -252,7 +282,16 @@
   .footer .redes {
     width: 70px; }
 
+.hidden_desktop {
+  display: none; }
+
 @media screen and (max-width: 720px) {
+  .hidden_desktop {
+    display: block; }
+
+  .hidden_tablet {
+    display: none; }
+
   #contenedor_cervezas .cervezas {
     grid-template-columns: repeat(2, auto); } }
 @media screen and (max-width: 550px) {
