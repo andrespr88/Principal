@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700">
+  <link rel="stylesheet" href="cerveza.css">
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<div class="login">
+  <div class="inner-login">
+    <div class="row"  style="margin:0">
+      <div class="col-sm-3 col-xs-12">
+      </div>
+      <div class="col-sm-3 col-xs-12">
+        <h1>PROMO</h1>
+        <h3>Solo Mayores de 18 años.</h3>
+      </div>
+      <div class="col-sm-3 col-xs-12">
+        <div class="whiteLogin">
+          <h2>Ingreso de datos</h2>
+          <form  onsubmit="event.preventDefault();simularSubmit()">
+            <div class="form-group">
+              <label for="nombre">nombre:</label>
+              <input type="text" class="form-control" id="nombre" name="nombre" required>   
+            </div>
+            <div class="form-group">
+              <label for="apellido">apellido:</label>
+              <input type="text" class="form-control" id="apellido" name="apellido" required>   
+            </div>
+            <div class="form-group">
+              <label for="edad">edad:</label>
+              <input type="number" class="form-control" id="edad" name="edad" required>       
+            </div>
+          <button type="submit" class="btn bluebg">Participar</button>
+          </form>
+        </div>
+      </div>
+      <div class="col-sm-3 col-xs-12">
+      </div>
+    </div>
+  </div>
+</div>
+<script src="cerveza.js"></script>
+</body>
+</html>

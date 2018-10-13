@@ -1,0 +1,64 @@
+.login{
+    text-align: center;
+    display: table;
+    color: white;
+    text-align: left;
+  }
+  .login {
+    width: 100%;
+    height: 100vh;
+    /*background: linear-gradient(45deg,#02a1ff,#cf3ad4);*/
+    background-image: url(promo-cerveza.jpg);
+  }
+  .login  h1{
+    font-weight: bold;
+    font-size: 4em;
+    padding: 0;
+    margin: 0;
+    margin-top: 70px;
+    background-color: rgba(0, 0, 0, .5);
+  }
+  .login  h3{
+    padding: 0;
+    margin: 0;
+    font-weight: lighter;
+    background-color: rgba(0, 0, 0, .5);
+  }
+  .login  .whiteLogin{
+    width: 100%;
+    background-color: white;
+    min-height: 270px;
+    text-align: center;
+    color: #464646;
+    padding: 10px;
+  }
+  .login  .whiteLogin  h2{
+    font-weight: bold;padding-top: 0;
+  }
+
+  .inner-login{
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .inner-login  .loginInputs{
+    padding-top: 35px;
+    width: 400px;
+    margin: auto;
+  }
+  .inner-login  .loginInputs  label{
+    font-weight: normal;
+    color: white;
+  }
+  .inner-login   .btn-green{
+    margin-top: 25px;
+  }
+  .inner-login   .btn-green  img{
+    margin: auto;
+    width: 80%;
+    max-width: 338px;
+  }
+
+  .bluebg {
+    background-color: #02a8fe;
+    color:white;
+  }

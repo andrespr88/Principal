@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+
+  <script src="js/main.js"></script>
+  <script>
+  	// variables numericas
+  	var numero1 = 1;
+  	var numero2 = 2;
+  	var numero3 = -2;	
+
+  	// variables textos
+  	var texto1 = "2";
+		var texto2 = 'sdjakldjka aksdjaldjsalkd aslkd';
+		
+		var nombre = "Andres";
+		var apellido = "Cruz";
+
+		// la barra \ sirve para decirle que lo que sigue lo siga leyendo como un string 
+		// (que no use la logica de siempre)
+		var nombreApellido = 'Andres \' Cruz';
+
+		console.log(texto2);
+		console.log(numero1 + numero2);
+		console.log(numero1 + texto1);
+
+		console.log(nombre + " " +apellido);
+		console.log("Hola mi nombre es " + nombre + " " + apellido);
+
+		// boolean
+		var verdadero = true;
+		var falso = false;
+
+		// array: la posicion arranca en 0
+		var dias = ['Lunes','Martes','Miercoles','Jueves','Viernes','Sabado','Domingo'];
+		var mix = [0,'Lunes',1,3,'Domingo'];
+
+		console.log(dias[1]);
+		console.log(mix[1]);
+		console.log(dias);
+		
+		// objeto
+		var alumno = {
+			nombre: 'Andres Cruz',
+			dni: '34123350',
+			edad: 30
+		};
+
+		console.log(alumno);
+		var mixArray = [alumno,0,'lunes'];
+		console.log(mixArray);
+
+  </script>
+</body>
+</html>
