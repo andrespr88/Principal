@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Desafío 2</title>
+</head>
+
+<body>
+
+  <script>
+
+    var genero = prompt("Por favor ingrese su genero (masculino o femenino)");
+    var edad = prompt("Por favor ingrese su edad");
+    var edadTexto = '';
+
+    if (parseInt(edad) >= 18) {
+      edadTexto = 'usted es mayor de edad, puede ingresar';
+    } else {
+      edadTexto = 'usted es menor de edad, no puede ingresar';
+    }
+
+    if (genero === 'masculino') {
+      alert("Sr. " + edadTexto);
+    } else if (genero === 'femenino') {
+      alert("Sra. " + edadTexto);
+    } else {
+      alert("Sx. " + edadTexto);
+    }
+
+    /*if(genero === 'masculino'){
+      if(parseInt(edad) >= 18){
+        alert("Sr. usted es mayor de edad, puede ingresar");
+      } else {
+          alert("Sr. usted es menor de edad, no puede ingresar");
+      }
+    } else if(genero === 'femenino'){
+        if(parseInt(edad) >= 18){
+          alert("Sra. usted es mayor de edad, puede ingresar");
+        } else {
+            alert("Sra. usted es menor de edad, no puede ingresar");
+        }
+    } else{
+        if(parseInt(edad) >= 18){
+          alert("Sx. usted es mayor de edad, puede ingresar");
+        } else {
+            alert("Sx. usted es menor de edad, no puede ingresar");
+        }
+    }*/
+
+  </script>
+</body>
+
+</html>
