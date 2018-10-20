@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700">
+  <link rel="stylesheet"  href="resultados.css">
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<div class="login">
+
+  <div class="inner-login">
+      <form  onsubmit="event.preventDefault();simularSubmit()">
+    <div class="row"  style="margin:0">
+      <div class="col-sm-2 col-xs-12">
+      </div>
+      <div class="col-sm-3 col-xs-12">
+        <div class="whiteLogin">
+          <h3>Alemania</h3>
+          <img class="img-responsive"  src="http://jquery.rastic.com.ar/alemania.png">
+          <input type="number" class="form-control" name="alemania" id="alemania" placeholder="goles alemania" required>
+      </div>
+      </div>
+      <div class="col-sm-2 col-xs-12 text-center" >
+        <h1 class="text-center">VS</h1>
+        <button type="submit" class="btn btn-primary">Resultado</button>
+        </div>
+      <div class="col-sm-3 col-xs-12">
+        <div class="whiteLogin">
+          <h3>Inglaterra</h3>
+          <img class="img-responsive" src="http://jquery.rastic.com.ar/inglaterra.jpg">
+          <input type="number" class="form-control" name="inglaterra" id="inglaterra" placeholder="goles inglaterra" required>
+        </div>
+      </div>
+      <div class="col-sm-2 col-xs-12">
+      </div>
+    </div>
+  </form>
+  </div>
+ 
+</div>
+<script src="resultados.js"></script>
+</body>
+</html>
