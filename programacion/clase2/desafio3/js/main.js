@@ -26,16 +26,16 @@ do {
 
 switch (operacion) {
   case 'sum':
-    alert("El resultado es: " + (parseInt(numero1) + parseInt(numero2)));
+    alert("El resultado de la suma es: " + (parseInt(numero1) + parseInt(numero2)));
     break;
   case 'res':
-    alert("El resultado es: " + (parseInt(numero1) - parseInt(numero2)));
+    alert("El resultado de la resta es: " + (parseInt(numero1) - parseInt(numero2)));
     break;
   case 'mul':
-    alert("El resultado es: " + (parseInt(numero1) * parseInt(numero2)));
+    alert("El resultado de la multiplicación es: " + (parseInt(numero1) * parseInt(numero2)));
     break;
   case 'div':
-    alert("El resultado es: " + (parseInt(numero1) / parseInt(numero2)));
+    alert("El resultado de la división es: " + (parseInt(numero1) / parseInt(numero2)));
     break;
   default:
   //En el prompt ya estoy validando que solo pueda ingresar alguna de las operaciones pedidas, pero por las dudas vuelvo a validar aqui
