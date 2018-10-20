@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <input type="text" name="numero" id="numero">
+  <input type="button" name="name" value="Par o Impar" onclick="imprimirNumero()">
+  <input type="text" name="cadena" id="cadena">
+  <input type="button" name="name" value="Mayuscula o Minuscula" onclick="imprimirCadena()">
+  <div id="div01">
+
+  </div>
+
+
+  <script src="js/main.js"></script>
+  <script>
+
+    function parImpar(numero){
+      var tipo = (numero % 2) ? "Impar" : "Par";
+      return tipo;
+      //(condiciones) ? Valor True : Valor False
+    }
+
+    /*
+    if(numero % 2 == 1) {
+    return "impar";
+    }
+    else {
+      return "Par";
+    }
+    */
+
+    function imprimirNumero(){
+      var entero = document.getElementById('numero').value;
+      var r = parImpar (entero);
+      document.getElementById('div01').innerText = r;
+    }
+    
+    function minusculaMayuscula(cadena){
+      var compararMin = cadena.toLowerCase();
+      var compararMay = cadena.toUpperCase();
+      if(compararMin === cadena){
+        return "La cadena esta toda en minusculas";
+      } else if (compararMay === cadena){
+        return "La cadena esta toda en mayusculas";
+      } else return "La cadena tiene mayusculas y minusculas"; 
+    }
+
+    function imprimirCadena(){
+      var texto = document.getElementById('cadena').value;
+      var r = minusculaMayuscula(texto);
+      document.getElementById('div01').innerText = r;
+    }
+
+    function palindromo(frase){
+      comparacion = frase.trim();
+      comparacion = toLowerCase();
+    }
+    
+
+  </script>
+</body>
+</html>

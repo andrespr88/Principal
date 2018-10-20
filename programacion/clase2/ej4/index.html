@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <input type="button" name="btn01" value="Pedir Contraseñas" onclick="document.getElementById('div01').innerText = principal(2)">
+
+  <div id="div01">
+
+    </div>
+
+  <script src="js/main.js"></script>
+  <script>
+
+    function principal(maximo){
+      i = 0;
+      do{
+        var contraseña = prompt("Ingrese la contraseña");
+        var confirmacion = prompt("Vuelva a ingresar la contraseña");
+        i++;
+  
+      } while((contraseña !== confirmacion || contraseña.trim() == "") && i < maximo);
+      if(contraseña !== confirmacion){
+        return 'Contraseña invalida';
+      } else {
+        return 'Contraseña Valida';
+      }
+    }
+
+
+  
+  </script>
+</body>
+</html>

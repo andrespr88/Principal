@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div>
+
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+  /*var nombre = prompt("Ingrese su nombre");
+  var edad = prompt("Ingrese su edad");
+  var salario = prompt("Ingrese su ultimo salario");
+  var año = 2018 - parseInt(edad);
+  
+  if(nombre === ''){
+    alert("No ingreso su nombre");
+  } else {
+    console.log("Nombre: " + nombre);
+    console.log("Edad: " + edad);
+    console.log("Año de Nacimiento: " + año);
+    console.log("Salario: " + salario);
+    if(año < 1960){
+      console.log("Monto de la pension: " + salario);      
+
+    }else if(año < 1967){
+      console.log("Monto de la pension: " + salario*85/100);      
+
+    }else if(año < 1977){
+      console.log("Monto de la pension: " + salario*70/100);      
+
+    }
+  } */
+
+  var miPrimerVector = [24,65,45,85,78,0,46]; 
+  var mayor = miPrimerVector[0];
+  for (var i = 0; i < miPrimerVector.length; i++){
+    if(miPrimerVector[i] > mayor){
+      mayor = miPrimerVector[i];      
+    }
+  }
+
+  // console.log("Valor Maximo es: " + mayor);
+
+  document.getElementsByTagName("div")[0].innerText = "Valor Maximo es: " + mayor;
+  </script>
+</body>
+</html>
