@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>prueba jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        .caja{
+            background: red;
+            width:80px;
+            text-align: center;
+        }
+
+
+        .alerta{
+            display:none;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <!-- <div class="alerta">Finalizo</div> -->
+    <div>
+    	<p class="dolar">38.05</p>
+    </div>
+    <div>
+    	<input class="monto" placeholder="Ingrese el monto en pesos" type="number">
+    </div>
+    
+    
+    <div class="caja">
+    	<p>Calcular</p>
+    </div>
+    <p class="texto"></p>
+
+    <script>
+        $('.caja').click(function(){
+            //alert('aguante boca');
+            //$(this).remove();
+            //$(this).css('background','blue');
+            //$(this).css('width','400px');
+            //$(this).addClass('azul');
+            
+            /*$(this).animate({
+                opacity: 0.25,
+                left: "+=50"
+              }, 5000, function() {
+                //alert('se completo la animacion');
+                $('.alerta').css('display','block');
+              });
+              */
+              var dolar = parseInt($('.dolar').html());
+              var monto = parseInt($('.monto').val());
+              var cotizacion = monto / dolar;
+              $('.texto').html("Son: " + cotizacion + " USD");
+              //alert('hola '+ nombre);
+
+        });
+
+
+        
+
+        
+    </script>
+</body>
+</html>
