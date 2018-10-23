@@ -11,28 +11,32 @@
   <input type="button" name="name" value="Par o Impar" onclick="imprimirNumero()">
   <input type="text" name="cadena" id="cadena">
   <input type="button" name="name" value="Mayuscula o Minuscula" onclick="imprimirCadena()">
-  <div id="div01">
-
-  </div>
+  <input type="text" name="frase" id="frase">
+  <input type="button" name="name" value="Palindromo" onclick="imprimirPal()">
+  <p id="div01"></p>
 
 
   <script src="js/main.js"></script>
   <script>
 
     function parImpar(numero){
-      var tipo = (numero % 2) ? "Impar" : "Par";
-      return tipo;
-      //(condiciones) ? Valor True : Valor False
+      entero = parseInt(numero)
+      if (isNaN(entero)) {
+        return "Usted no ingresó un número";
+      } else {
+        //(condiciones) ? Valor True : Valor False
+        var tipo = (entero % 2) ? "Impar" : "Par";
+        return tipo;
+        /*
+        if(entero % 2 == 1) {
+        return "impar";
+        }
+        else {
+          return "Par";
+        }
+        */
+      }
     }
-
-    /*
-    if(numero % 2 == 1) {
-    return "impar";
-    }
-    else {
-      return "Par";
-    }
-    */
 
     function imprimirNumero(){
       var entero = document.getElementById('numero').value;
@@ -44,22 +48,35 @@
       var compararMin = cadena.toLowerCase();
       var compararMay = cadena.toUpperCase();
       if(compararMin === cadena){
-        return "La cadena esta toda en minusculas";
+        return "Está todo en minúsculas";
       } else if (compararMay === cadena){
-        return "La cadena esta toda en mayusculas";
-      } else return "La cadena tiene mayusculas y minusculas"; 
+        return "Está todo en mayúsculas";
+      } else return "Está en mayúsculas y minúsculas"; 
     }
 
     function imprimirCadena(){
       var texto = document.getElementById('cadena').value;
-      var r = minusculaMayuscula(texto);
-      document.getElementById('div01').innerText = r;
+      document.getElementById('div01').innerText = minusculaMayuscula(texto);
     }
 
     function palindromo(frase){
-      comparacion = frase.trim();
-      comparacion = toLowerCase();
+//pasa todo a minuscula y le quita los espacios y caracteres que no sean alfanumericos
+      var derecho = frase.toLowerCase().replace(/[\W_]/g, '');
+//split transforma la frase a un array
+//reverse invierte el orden del array
+//join transforma el array a un string nuevamente
+      var reverso = derecho.split('').reverse().join(''); 
+      return derecho === reverso;
     }
+
+    function imprimirPal(){
+      var frase = document.getElementById('frase').value;
+      if (palindromo(frase))
+        document.getElementById('div01').innerText = "Es un palindromo";
+        else
+        document.getElementById('div01').innerText = "No es un palindromo";
+    }
+
     
 
   </script>
