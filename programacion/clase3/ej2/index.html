@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <p id="original"></p>
+  <p id="mayuscula"></p>
+  <p id="vocales"></p>
+  <p id="parentesis"></p>
+  <p id="reverso"></p>
+
+  <script src="js/main.js"></script>
+  <script>
+
+    var texto = prompt("Ingrese un texto");
+
+    document.getElementById("original").innerText = "Texto Original: " + texto;
+
+    function convertirMay(cadena) {
+      return cadena.toUpperCase();
+    }
+    
+    document.getElementById("mayuscula").innerText = "Texto en Mayúscula: " + convertirMay(texto);
+
+    function numeroVocales (cadena){
+      var numeroVocales = 0;    
+      if (cadena.match(/[aeiou]/gi) != null){
+        numeroVocales = cadena.match(/[aeiou]/gi).length;
+      } 
+      return numeroVocales;
+    }
+    
+    document.getElementById("vocales").innerText = "Cantidad de vocales: " + numeroVocales(texto);
+
+    function parentesis (cadena){
+      var mostrar
+      if (cadena.indexOf("(") == -1){
+        mostrar = "";
+      } else {
+        mostrar = cadena.slice(cadena.indexOf("(")+1, cadena.indexOf(")"));
+      }
+      return mostrar;
+    }
+
+    document.getElementById("parentesis").innerText = "Texto entre paréntesis: " + parentesis(texto);
+
+    function reverso (cadena){
+      return cadena.split("").reverse().join("");   
+    }
+
+    document.getElementById("reverso").innerText = "Texto al revés: " + reverso(texto);
+
+    
+
+  </script>
+</body>
+
+</html>
