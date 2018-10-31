@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Coincidencias parciales</title>
+</head>
+<body>
+    <p>Compara si el texto ingresado en el primer campo, está incluído en el texto ingresado en el segundo campo.</p>
+    <p>Ej:</p>
+    <div>
+        <input type="text" placeholder="Pa" disabled>
+        <input type="text" placeholder="Patricia" disabled>
+        <span>//Deberá encontrar una coincidencia</span>
+    </div>
+    <input type="text" name="cadena" id="cadena">
+    <input type="text" name="cadena" id="cadena2">
+    <input type="button" value="Comparar" onclick="imprimirResultado()">
+    <p id="resultado"></p>
+
+    <script src="js/main.js"></script>
+    
+</body>
+</html>

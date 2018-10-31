@@ -1,3 +1,8 @@
+REGEX
+------------------------------------------------------------------------------------------------------
+Caracteres alfanumericos(sin espacio)= /\w/g
+Caracteres que no sean alfanumericos = /[\W_]/g
+
 Parsear numero con decimales
 ------------------------------------------------------------------------------------------------------
 var numeroString = "325,5ds5"
