@@ -1,3 +1,10 @@
+OBJETOS
+------------------------------------------------------------------------------------------------------
+RECORRER un objeto
+for (var item in newStudent) {
+console.log(item + ": " + newStudent[item]);
+}
+
 REGEX
 ------------------------------------------------------------------------------------------------------
 Caracteres alfanumericos(sin espacio)= /\w/g
