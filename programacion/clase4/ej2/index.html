@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+
+  <script src="js/main.js"></script>
+  <script>
+/*Crear un array vacío, luego generar 20 números al azar y guardarlos en un array.
+Dado un array que contiene ["azul", "amarillo", "rojo", "verde", "café", "rosa"] determinar si un 
+color introducido por el usuario a través de un prompt se encuentra dentro del array o no.*/
+
+var array = [];
+
+function cargarArray(array){
+  for (i = 0; i < 20; i++){
+    array[i] = (Math.random()*100).toFixed(0);
+  }
+}
+
+cargarArray(array);
+console.log(array);
+
+var colores = ["azul", "amarillo", "rojo", "verde", "café", "rosa"];
+
+var color = prompt("ingrese un color");
+
+function colorEsta (color, array){
+  return (array.indexOf(color) !== -1) ? true : false;
+}
+
+console.log(colorEsta(color, colores));
+
+  </script>
+</body>
+
+</html>

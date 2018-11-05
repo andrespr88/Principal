@@ -7,3 +7,8 @@ Parsear numero con decimales
 ------------------------------------------------------------------------------------------------------
 var numeroString = "325,5ds5"
 var numeroDecimal = parseFloat(numeroString.replace(",", ".")).toFixed(2);
+
+JSON
+------------------------------------------------------------------------------------------------------
+JSON.stringify(objeto); //pasa el objeto a una cadena de texto JSON
+JSON.parse(cadena); //pasa la cadena de texto JSON a un objeto en javascript

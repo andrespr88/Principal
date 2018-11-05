@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <input type="button" value="Probar" onclick="main()">
+
+
+  <script src="js/main.js"></script>
+  <script>
+/*La función tiene que recibir como parámetros una key y un Array y convertir el Array en JSON para 
+guardarlo en el localStorge. La función tiene que validar los parámetros que recibe, en caso de que 
+alguno sea incorrecto no debe romper ni guardar nada*/
+
+    
+
+    function setLocalList(key, testList){
+      
+      if (testList != undefined && Array.isArray(testList)){
+        //convertimos en JSON el array
+        testList = JSON.stringify(testList);
+        //creo el localStorage
+        localStorage.setItem(key, testList);
+      }
+    }
+
+
+/*La función tiene que recibir como parámetro una key y buscar en el localStorage por esa key devolviendo 
+un objeto de JavaScript, si no existe el elemento debe devolver un Array vacío. La función tiene que
+validar los parámetros que recibe, en caso de que alguno sea incorrecto no debe romper ni borrar nada.*/
+
+function getLocalList(key){
+  if (typeof key == "string"){
+    if (localStorage.getItem(key) !== null){
+      var resultado = JSON.parse(localStorage.getItem(key)); 
+      return resultado;
+    } else {
+      var vacio = [];
+      return vacio;
+    }
+  }
+}
+
+    function main(){
+      var testList = ['CARLOS','GERONIMO','NICOLAS','LUCAS'];
+      setLocalList("studentsList", testList);
+      var studentsList = getLocalList('studentsList'); 
+      console.log(studentsList);
+    }
+
+  </script>
+</body>
+
+</html>

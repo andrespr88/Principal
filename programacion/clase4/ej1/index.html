@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+
+  <script src="js/main.js"></script>
+  <script>
+    /*Dado el array = [1,2,3,4,5,6]
+
+
+
+
+
+Iterar por todos los elementos dentro de un array utilizando .forEach y mostrarlos en pantalla.
+
+Mostrar todos los elementos dentro de un array sumándole uno a cada uno.
+
+Generar una copia de un array pero con todos los elementos incrementado en 1.
+
+
+*/
+    var array = [1,2,3,4,5,6];
+    
+    /*
+//Iterar por todos los elementos dentro de un array utilizando while y mostrarlos en pantalla.
+    var i = 0;
+
+    while (i < array.length){
+      console.log(array[i]);
+      i++;
+    }*/
+
+//Iterar por todos los elementos dentro de un array utilizando for y mostrarlos en pantalla.
+    for(i=0; i < array.length; i++){
+      console.log(array[i]);
+    }
+
+    function myFuncion(item, indice){
+      console.log(item);
+    }
+
+    array.forEach(myFuncion);
+
+    function suma(item, indice){
+      console.log(item+1);
+    }
+
+    array.forEach(suma);
+
+    var array2 = array.map(incrementar);
+
+    function incrementar(item, indice){
+      return item + 1;
+    }
+
+    console.log(array2);
+
+//Calcular el promedio
+    function promedio (array){
+      var suma = 0;
+      function sumar(item, indice){
+        suma = suma + item;
+      }
+      array.forEach(sumar);
+      return suma / array.length;
+    }
+
+    console.log("promedio: " + promedio(array));
+
+/*Arreglo y Objeto Personas
+
+Crear un objeto literal persona con nombre y edad y una método que determine si es mayor de edad o no.
+
+Crear una función constructora que permita crear objetos del tipo personas pasándole solo un nombre y edad, agregar el método.
+
+Crear un array que contenga varios objetos persona
+
+Crear una función que reciba el array y devuelva la edad promedio del grupo de personas.*/
+
+function crearPersona (_nombre, _apellido, _edad){
+  function esMayor {
+    return (this.edad >= 18) ? true : false;
+  }
+  return {
+    nombre: _nombre,
+    apellido: _apellido,
+    edad: _edad,
+    EsMayor: esMayor
+  }
+}
+
+var persona01 = crearPersona(Andres, Cruz, 30);
+var persona02 = crearPersona(Andres, Cruz, 15);
+var persona03 = crearPersona(Andres, Cruz, 25);
+var persona04 = crearPersona(Andres, Cruz, 17);
+var persona05 = crearPersona(Andres, Cruz, 35);
+
+personas = [persona01,persona02,persona03,persona04,persona05];
+
+function reducePromedioPersona(total, item, indice, array){
+
+} 
+    
+
+  </script>
+</body>
+
+</html>
