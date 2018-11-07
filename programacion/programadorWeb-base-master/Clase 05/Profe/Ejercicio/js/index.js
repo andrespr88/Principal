@@ -20,6 +20,12 @@ var oldCars = [
 
 // Función constructora
 
+/**
+ * Car es una función constructora de un objeto auto
+ * @param {string} _model
+ * @param {string} _brand
+ * @param {number} _year
+ */
 function Car (_model, _brand, _year) {
   // Propiedades privadas
   var _id = Math.random()
@@ -39,15 +45,6 @@ var oldCar
 
 var newCar
 var newCars = []
-
-// newCar = new Car('Twing', 'Renault', 2000)
-
-// console.log(newCar.getCarName())
-
-// newCar.model = 'Pato'
-// newCar.brand = 'Ford'
-
-// console.log(newCar.getCarName())
 
 // Lleno un nuevo Array con los objetos creados con la función Car
 for (var i = 0; i < oldCars.length; i++) {

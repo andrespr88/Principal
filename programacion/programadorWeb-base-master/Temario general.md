@@ -1,13 +1,13 @@
 # 1 Sintaxis y Variables [Modulo A]
 
 - 1.1	¿Qué es un algoritmo?
-- 1.2	¿Qué es Javascript? 
-- 1.3	Inclusión de Javascript.
+- 1.2	¿Qué es JavaScript? 
+- 1.3	Inclusión de JavaScript.
 - 1.4	Sintaxis y palabras reservadas
 - 1.5	Variables
 - 1.6	Tipos de valores
 - 1.7	Operadores aritméticos
-- 1.8 Web API's y funciones de alto nivel útiles [F]
+- 1.8 Web API's y funciones de alto nivel útiles
 
 # 2 Control de flujo [Modulo A]
 
@@ -17,7 +17,7 @@
 
 # 3 Ciclos e iteraciónes [Modulo A]
 
-- 3.0 Repaso de Git y GitHub [F]
+- 3.0 Repaso de Git y GitHub
 - 3.1	Ciclos e iteraciones
 - 3.2	Sentencias `break` y `continue`
 
@@ -88,25 +88,25 @@
 - 13.1 Más eventos de jQuery
 - 13.2 Más métodos de jQuery
 
-# 14 Efectos y animaciones con jQuery [Modulo C]
+# 16 Efectos y animaciones con jQuery [Modulo C]
 
-- 15.1 Efectos
-- 15.2 Animaciones
+- 14.1 Efectos
+- 14.2 Animaciones
 
 # 15 Consultas AJAX con JQuery [Modulo C]
 
-- 16.1 ¿Qué es una API y para qué sirve?
-- 16.2 ¿Qué son los métodos HTTP GET, POST, PUT y DELETE?
-- 16.3 AJAX
+- 15.1 ¿Qué es una API y para qué sirve?
+- 15.2 ¿Qué son los métodos HTTP GET, POST, PUT y DELETE?
+- 15.3 AJAX
 
 # 16 Crear la estructura de una SPA usando jQuery [Modulo C]
 
-- 14.1 ¿Qué es SPA y para qué sirve?
-- 14.2 Instalación de un servidor local Front-End
-- 14.3 Método `.load()`
-- 14.4 Router de una SPA
-- 14.5 Patrón MVC
-- 14.6 Module patern
+- 16.1 ¿Qué es SPA y para qué sirve?
+- 16.2 Creación e instalación de la estructura de un proyecto SPA
+- 16.3 Module Pattern
+- 16.4 Router de una SPA
+- 16.5 Método `load()` de jQuery y patrón MVC
+
 
 # 17 Workshop II
 
