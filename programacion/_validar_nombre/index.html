@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+    
+      <h2 class="text-center">Clase 09 - Desafío</h2>
+      <h3 class="text-center">Ingreso de Datos</h3>
+      <form action="" class="">
+        <div class="form-group">
+          <input type="text" class="form-control" name="nombre" id="inputNombre" placeholder="Nombre">
+        </div>
+        <div class="form-group">
+          <input type="email" class="form-control" name="email" id="inputEmail" placeholder="Email">
+        </div>
+      </form>
+    
+
+  </div>
+
+
+
+  <script src="js/main.js"></script>
+  <script>
+    
+    document.onreadystatechange = function(){
+      if (document.readyState == "complete"){
+        var nombre = document.getElementById("inputNombre");
+        nombre.addEventListener("blur",validarNombreEmail);
+        //nombre.onblur = validarEmail;
+        var email = document.getElementById("inputEmail");
+        //email.addEventListener("blur",validarEmail);
+        email.onblur = validarNombreEmail;
+      }      
+    }
+
+     
+    function agregarClase (obj){
+      var test = obj.value;
+      if (obj.id == "inputEmail"){
+        //verifica que tenga: string + "@" + string + "." + string de min 2 y max 4 caracteres 
+        test = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})$/.test(obj.value);
+      }
+      if (test){
+        //le saco la clase "is-invalid", en caso que no la tenga, no rompe ni hace nada        
+        obj.classList.remove("is-invalid");
+        obj.classList.add("is-valid");        
+      } else {
+        obj.classList.remove("is-valid");
+        obj.classList.add("is-invalid");
+      }
+    }
+
+    function validarNombreEmail(){
+      agregarClase (this); 
+    }
+
+  </script>
+</body>
+
+</html>
