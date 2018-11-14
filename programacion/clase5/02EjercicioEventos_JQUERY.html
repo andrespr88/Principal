@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0064)https://www.arkaitzgarro.com/javascript/snippets/cap18/ej18.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Ejercicio 18 - Información sobre eventos</title>
+    
+
+    <style type="text/css">
+        body {font-family: arial, helvetica;}
+        .box {width:160px; height:160px; border:thin solid silver; padding:.5em; float: left; margin-right: 15px;}
+        .box h1 {margin: 0;}
+    </style>
+</head>
+
+<body>
+    <div id="raton" class="box">
+        <h1>Ratón</h1>
+        <div></div>
+    </div>
+    <div id="teclado" class="box">
+        <h1>Teclado</h1>
+        <div></div>
+    </div>
+
+    
+    <script src="jquery.js" type="text/javascript"></script>
+    <script>
+/*Completar el código JavaScript proporcionado para que:
+Al mover el ratón en cualquier punto de la ventana del navegador, se muestre la posición del puntero respecto del navegador y respecto de la página:
+
+Para mostrar los mensajes, utilizar la función muestraInformacion() deduciendo su funcionamiento a partir de su código fuente.  Al pulsar cualquier tecla, el mensaje mostrado debe cambiar para indicar el nuevo evento y su información asociada:
+
+Añadir la siguiente característica al script: cuando se pulsa un botón del ratón, el color de fondo del cuadro de mensaje debe ser amarillo (#FFFFCC) y cuando se pulsa una tecla, el color de fondo debe ser azul (#CCE6FF). Al volver a mover el ratón, el color de fondo vuelve a ser blanco.*/
+        
+        $(document).ready(function(){
+          //  if (document.readyState == "complete"){
+                //Asocio al evento onmouse la funcion movimientoMouse
+                //document.onmousemove = movimientoMouse;
+                //otra manera de asociar el evento a la funcion
+                document.addEventListener("mousemove", movimientoMouse);
+                document.addEventListener ("keydown", teclaPresionada);
+                document.addEventListener ("click", colorMouse);
+            //}
+        });
+
+        function movimientoMouse () {
+            var miDiv = $("#raton")[0];
+            var miDiv2 = $("#teclado")[0];
+            var coordNavegador = {
+                x: event.screenX,
+                y: event.screenY
+            }
+            var coordPage = {
+                x: event.pageX,
+                y: event.pageY
+            }
+
+            miDiv.getElementsByTagName("div")[0].innerHTML = 
+                "<div>Navegador: " + coordNavegador.x + "," + coordNavegador.y + "</div>" +
+                "<div>Pagina: " + coordPage.x + "," + coordPage.y + "</div>";
+            
+            miDiv.style.backgroundColor = "white";
+            miDiv2.style.backgroundColor = "white";                
+        }
+
+        function teclaPresionada (){
+            var miDiv = $("#teclado")[0];
+            var info = {
+                caracter: event.key,
+                code: event.key.charCodeAt(0)
+            }
+            miDiv.getElementsByTagName("div")[0].innerHTML = 
+                "<div>Navegador: " + info.caracter + "</div>" +
+                "<div>Pagina: " + info.code + "</div>";
+            miDiv.style.backgroundColor = "#CCE6FF";
+        }
+        
+        function colorMouse(){
+            //miDiv = document.getElementById("raton");
+            $("#raton")[0].style.backgroundColor = "#FFFFCC";
+        }
+
+
+    </script>
+    
+
+</body></html>
