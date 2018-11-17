@@ -63,11 +63,12 @@ El password debe tener una longitud mínima de 6 caracteres, y contener al menos
                 var inputPass = document.getElementById("registro_password");
                 var formulario = document.getElementById("registro");
                 inputNombre.setAttribute("required", "");
-                inputEmail.setAttribute("required", "");
                 inputComentarios.setAttribute("required", "");
-                inputEmail.addEventListener("blur", evaluarEmail);
-                inputEmail.addEventListener("blur", evaluarComentarios);
+                inputEmail.setAttribute("required", "");
                 inputComentarios.setAttribute("maxlength", "50");
+                inputPass.setAttribute("minlength", "6")
+                inputEmail.addEventListener("blur", evaluarEmail);
+                inputComentarios.addEventListener("blur", evaluarComentarios);
                 inputPass.addEventListener("blur", evaluarPass);
                 formulario.addEventListener ("submit", evaluarFormulario);
                 
