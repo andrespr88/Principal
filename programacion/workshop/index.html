@@ -21,14 +21,13 @@
 
       <div class="col-md-6 order-2 order-md-1">
         <h4 class="text-center">Lista de Alumnos</h4>
-        <ul id="listaPrincipal" class="list-group">
-        </ul>
+        <ul id="listaPrincipal" class="list-group"></ul>
       </div>
 
       <div class="col-md-6 order-1 order-md-2">
         <h4 class="text-center">Ingreso de Datos</h4>
 
-        <form action="" class="form-row">
+        <form action="" id="formularioAgregar" class="form-row">
           <div class="form-group col-md-6">
             <input type="text" class="form-control" id="inputNombre" placeholder="Nombre" name="nombre" required>
           </div>
@@ -36,36 +35,39 @@
             <input type="text" class="form-control" id="inputApellido" placeholder="Apellido" name="apellido">
           </div>
           <div class="form-group col-md-6">
-            <input type="text" class="form-control" id="inputDNI" placeholder="DNI" name="dni" required>
+            <input type="text" class="form-control" id="inputDni" placeholder="DNI" name="dni" required>
           </div>
           <div class="form-group col-md-6">
             <input type="email" class="form-control" id="inputEmail" placeholder="Email" name="email">
           </div>
           <div class="form-group col">
-            <input type="submit" class="btn btn-block btn-primary" value="Agregar alumno">
+            <input type="button" class="btn btn-block btn-primary" id="agregarAlumno" value="Agregar alumno">
+            <input type="button" class="btn btn-block btn-primary d-none" id="modificarAlumno" value="Modificar alumno">
           </div>
         </form>
 
         <form action="" class="form-row">
           <div class="form-group col-md-6">
-            <input type="text" class="form-control" placeholder="DNI" name="dni" required>
+            <input type="text" class="form-control" id="inputEliminarDni" placeholder="DNI" name="dni" required>
           </div>
           <div class="form-group col-md-6">
-            <input type="submit" class="btn btn-danger btn-block" value="Eliminar alumno">
+            <input type="submit" class="btn btn-danger btn-block" id="eliminarAlumno" value="Eliminar alumno">
           </div>
         </form>
 
-        <form action="" class="form-row">
+        <div class="form-row">
           <div class="form-group col-md-6">
-            <input type="text" class="form-control" placeholder="Nombre" name="nombre" required>
+            <input type="text" class="form-control" id="inputBuscarNombre"placeholder="Nombre" name="nombre" aria-describedby="nombreHelp" required>
+            <small id="nombreHelp" class="form-text text-muted"></small>
           </div>
           <div class="form-group col-md-6">
-            <input type="submit" class="btn btn-success btn-block" value="Buscar alumno">
+            <input type="button" class="btn btn-success btn-block" id="buscarAlumno" value="Buscar alumno">
           </div>
-        </form>
+        </div>
 
-        <div class="col">
-          <ul id="listaBusqueda" class="list-group"></ul>
+        <div class="form-row">
+          <ul id="listaNotas" class="list-group col"></ul>
+          <ul id="listaBusqueda" class="list-group"></ul>          
         </div>
 
       </div>
