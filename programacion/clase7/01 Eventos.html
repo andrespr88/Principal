@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ejercicios eventos jquery</title>
+    <script src="jquery.js"></script>
+    <script>
+	$(document).ready(function() {
+		function clicAlerta() {
+            alert("Has hecho clic");
+        }
+        
+        $("p").on("mouseenter",function(){
+            this.style.color="red";
+        });
+
+        $("p").on("mouseout",function(){
+            this.style.color="black";
+        });
+        $(".miclase").on("click", clicAlerta);
+        
+    });
+    </script>
+</head>
+<body>
+    <p class="miclase">Primer párrafo</p>
+    <p>Otro párrafo</p>
+</body>
+</html>
