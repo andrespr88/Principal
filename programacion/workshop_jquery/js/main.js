@@ -42,9 +42,9 @@ function cargaInicial() {
 function crearNodo(nuevoAlumno) {
     var nodo ='<h3 id="'+ nuevoAlumno.dni +'">'+nuevoAlumno.nombre + ' ' + nuevoAlumno.apellido + '</h3>' +
     '<div>'+
-        '<p>Dni: ' + nuevoAlumno.dni +'</p><p>E-mail: ' +
-        nuevoAlumno.email +'</p>' +
-        '<input type="button" class="btn btn-block btn-warning" value="Modificar Notas" onclick = "agregarNotas('+JSON.stringify(nuevoAlumno).replace(/"/g,"'")+')">'+
+        '<h5>Dni: ' + nuevoAlumno.dni +'</h5><p>E-mail: ' +
+        nuevoAlumno.email + '</p>' +
+        '<input type="button" class="btn btn-block btn-sm btn-warning col-6 offset-3" value="Modificar Notas" onclick = "agregarNotas('+JSON.stringify(nuevoAlumno).replace(/"/g,"'")+')">'+
     '</div>';
     return nodo;
 }
@@ -77,13 +77,18 @@ function validarEmail() {
 }
 
 function validarDni () {
-    var test = false;
     var dni = this.value.trim();
-    //verifico que dni sea un numero, que sea positivo y que no exista otro alumno con ese dni 
-    if (parseInt(dni) > 0 && buscarAlumnoDni(dni) == -1 && dni.length == 8){
-        test = true;
-        document.getElementById("dniHelp").innerText = "";                
-    } else document.getElementById("dniHelp").innerText = "Debe contener 8 caracteres y no debe coincidir con ningun dni de la lista"
+    //compruebo que sea un numero entero y positivo
+    var test = /^\d+$/g.test(dni);
+    if (!test){
+        document.getElementById("dniHelp").innerText = "Ingrese un número entero y positivo"; 
+    } else if (dni.length != 8){
+        test = false;
+        document.getElementById("dniHelp").innerText = "Ingrese un número de 8 dígitos";
+    } else if (buscarAlumnoDni(dni) != -1) {
+        test = false;
+        document.getElementById("dniHelp").innerText = "El Dni ingresado coincide con el de otro alumno";
+    } else document.getElementById("dniHelp").innerText = "";  
     agregarClase (this, test);
     validarBotonAgregar();
 }
@@ -188,15 +193,22 @@ function getLocalList(key) {
 
 //funcion que muestra las notas del alumno en el html
 function agregarNotas(alumno){
-    var liNotas = document.getElementById("dialog");
-    liNotas.innerHTML = "";
+    var listaNotas = document.getElementById("dialog");
+    listaNotas.innerHTML = '';
+    var liNotas = '<div class="input-group">';
     var vectorNotas = alumno.notas;
-    for (var i = 0; i < vectorNotas.length; i++) {             
-        liNotas.innerHTML += '<p"><input type="number" class="form-control form-control-sm" onkeyup="validarNota()" value="'+vectorNotas[i]+'"></p>';
+    for (var i = 0; i < vectorNotas.length; i++) {   
+        //para que haya un maximo de 3 notas por fila
+        if (i != 0 && i % 2 == 0){
+            liNotas += '</div><div class="input-group">';
+        }          
+        liNotas += '<p class="col-6"><input type="number" class="form-control form-control-sm" onkeyup="validarNota()" value="'+vectorNotas[i]+'"></p>';        
+        if (i == vectorNotas.length - 1) 
+            liNotas += '</div>';
     } 
     //muestro el input para agregar una nota nueva y el boton para actualizarlas
-    liNotas.innerHTML +=
-    '<p><input class="form-control form-control" type="number" id="inputNota" onkeyup="validarNota()" placeholder="Nueva nota"></p>'+
+    listaNotas.innerHTML += liNotas +
+    '<p class="col"><input class="form-control form-control" type="number" id="inputNota" onkeyup="validarNota()" placeholder="Nueva nota"></p>'+
     '<p class="col"><input type="button" class="btn btn-block btn-success" value="Actualizar" onclick="actualizarNotas('+JSON.stringify(alumno).replace(/"/g,"'")+')"><p>'; 
     $( "#dialog" ).dialog();
 }
@@ -285,6 +297,7 @@ function buscarAlumnoNombre () {
             apellidoVector = vectorAlumnos[i].apellido.toLowerCase();
             //comparo el nombre del input con el nombre y el apellido de cada alumno
             if (nombreVector.indexOf(nombre) !== -1 || apellidoVector.indexOf(nombre) !== -1){
+                resetearFormulario(document.getElementById("formularioAgregar"));
                 //si hay coincidencia, muestro los datos en los inputs
                 var inputDni = document.getElementById("inputDni");
                 inputDni.value = vectorAlumnos[i].dni;
@@ -303,10 +316,12 @@ function buscarAlumnoNombre () {
                 agregarClase(document.getElementById("inputNombre"),true);
                 agregarClase(document.getElementById("inputDni"),true);
                 agregarClase(document.getElementById("inputEmail"),true);
+                //cambio la funcion que valida el #inputDni
                 inputDni.removeEventListener("keyup", validarDni);
                 inputDni.addEventListener("keyup", validarModificarDni);
-                //pinto la ficha del alumno buscado
+                //selecciono el alumno para que se visualice en el acordeon
                 var lista = document.getElementById("accordion").getElementsByTagName("h3");
+                //agrego la clase active (esto lo usaba para bootstrap, pero lo dejo para poder encontrar al alumno sin usar una variable global)
                 lista[i].classList.add("active");
                 $( "#accordion" ).accordion( "option", "active", i );
                 //reseteo el campo que indica que no se encontró el alumno
@@ -327,12 +342,15 @@ function validarModificarDni () {
     var dni = document.querySelectorAll("#accordion h3.active")[0].id;
     //busco la posicion del alumno en el vector del localStorage
     var posicion = buscarAlumnoDni(dni);
-    var inputDni = document.getElementById("inputDni");
     //busco si existe algun alumno con el dni obtenido del inputDni
-    var posicion2 = buscarAlumnoDni(inputDni.value.trim());
-    //si (el inputDni no esta vacio && (no coincide con los otros dni || coincide con el mismo alumno que estoy modificando)) le agrego la clase "is-valid", si no, agrego la clase "is-invalid"
-    var condicion = inputDni.value.trim() && (posicion2 == -1 || posicion == posicion2);
-    agregarClase(inputDni,condicion);
+    var posicion2 = buscarAlumnoDni(this.value.trim());
+    //compruebo que sea un número entero y positivo
+    var test = /^\d+$/g.test(this.value);
+    //si (el inputDni es un entero positivo && (no coincide con los otros dni || coincide con el del mismo alumno que estoy modificando)) le agrego la clase "is-valid", si no, agrego la clase "is-invalid"
+    var condicion = test && this.value.trim().length == 8 && (posicion2 == -1 || posicion == posicion2);
+    agregarClase(this,condicion);
+    //si no es valido, muestro una ayuda
+    (condicion) ? document.getElementById("dniHelp").innerText = "" : document.getElementById("dniHelp").innerText = "Ingrese un número de 8 dígitos, no debe coincidir con el dni de otro alumno";
     validarBotonAgregar();
 }
 
