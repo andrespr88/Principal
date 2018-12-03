@@ -36,3 +36,10 @@ JSON
 ------------------------------------------------------------------------------------------------------
 JSON.stringify(objeto); //pasa el objeto a una cadena de texto JSON
 JSON.parse(cadena); //pasa la cadena de texto JSON a un objeto en javascript
+
+------------------------------------------------------------------------------------------------------
+Jquery
+------------------------------------------------------------------------------------------------------
+var inputNode = $(this)
+var parentNode = inputNode.parent()
+parentNode.append('<div class="invalid-feedback">' + errorText + '</div>')
