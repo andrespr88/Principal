@@ -37,27 +37,52 @@
         $(document).ready(function () {
             $("table thead").addClass("cabecera");
             $("table tr:nth-child(even)").addClass("striped");
+            //asocio el evento mouseover a todos los td con atributo title
+            $("td[title]").on("mouseover",function(){
+                //obtengo el texto de title         
+                var texto = $(this).attr("title");
+                $(this).data("titulo",texto);
+                $(this).removeAttr("title");
+                //cambio el display de none a block
+                $(".tooltip").slideDown("fast");
+                $(".tooltip").text(texto)
+                
+            });
+            
+            //asocio el evento mousemove al td
+            $("td[title]").mousemove(function(e){
+                //a medida que muevo el mouse voy cambiando la posicion de .tooltip
+                $(".tooltip").css({
+                    top: e.pageY +5,
+                    left: e.pageX +5
+                });
+            });
+
+            $("td[title]").on("mouseout",function(){
+                $(".tooltip").hide();
+                $(this).attr("title",$(this).data("titulo"));
+                $(this).removeData("titulo");
+                
+            });
+
+            /*
             $("tr").on("mouseover",function(){
                 // var miDiv = "<td>17 goles, uno de penalty.  12 partidos jugados, 1021 minutos. 1 gol cada 60 minutos.</td>"
                 // $(this).html($(this).html + miDiv);
                 var texto = $(this).children()[0].title; 
-                var $td = $('<td/>'+texto+'</td>');
-                var td = ('<td/>'+texto+'</td>');
-                debugger
-                // $("#titulo").text(texto);
-                // $("#titulo").show();
-                $(this).append('<td/>'+texto+'</td>');
+                if (texto)
+                    $(this).append('<td id="titulo">'+texto+'</td>');
                 
             });
             $("tr").on("mouseout",function(){
-                $("#titulo").hide();
-            }); 
+                $("#titulo").remove();
+            });*/ 
         });
     </script>
 </head>
+
 <body>
     
-    <div class="tooltip"></div>
     <table>
         <thead>
             <tr>
@@ -103,6 +128,6 @@
             </tr>
         </tbody>
     </table>
-    <div id="titulo" style="position: absolute"></div>
+    <div class="tooltip"></div>
 </body>
 </html>
