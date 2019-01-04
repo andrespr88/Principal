@@ -292,18 +292,37 @@ function actualizarNotas(alumno){
 }
 
 function enviarNotas(dni, notas){
-    $.ajax({
-        type: "POST",
-        data: JSON.stringify({dni: dni, notas: notas}),
-        url: "http://localhost:8080/enviarNotas",
-        async: false,
-        success: function(responde){
-            debugger;
-        },
-        error: function(a,b,c){
-            debugger;
-        }
-    });
+    // $.ajax({
+    //     type: "POST",
+    //     data: JSON.stringify({dni: dni, notas: notas}),
+    //     url: "http://localhost:8080/enviarNotas",
+    //     async: false,
+    //     success: function(responde){
+    //         debugger;
+    //     },
+    //     error: function(a,b,c){
+    //         debugger;
+    //     }
+    // });
+    var jqxhr = $.post( "http://localhost:8080/enviarNotas", function() {
+        alert( "success" );
+      })
+        .done(function() {
+          alert( "second success" );
+        })
+        .fail(function() {
+          alert( "error" );
+        })
+        .always(function() {
+          alert( "finished" );
+        });
+       
+      // Perform other work here ...
+       
+      // Set another completion function for the request above
+      jqxhr.always(function() {
+        alert( "second finished" );
+      });
 }
 
 //borra todo el contenido de #listaNotas
