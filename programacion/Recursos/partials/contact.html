@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Workshop Final</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="../lib/jquery.js"></script>
+
+  <link rel="icon" href="../favicon.png">
+
+</head>
+
+<body>
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark text-warning">
+    <a class="navbar-brand mb-0 h1">
+      <img src="../img/light-saber.png" width="30" height="30" alt=""> Star wars
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="../partials/home.html" id="home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../partials/people.html" id="people">Personajes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../partials/local-storage.html" id="localStorage">Guardado</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../partials/contact.html" id="contact">Contacto</a>
+        </li>
+      </ul>
+    </div>
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-warning my-2 my-sm-0" type="button">Buscar</button>
+    </form>
+  </nav>
+
+  
+  <div id="root">
+  
+  <div style="width: 80%; margin: auto; text-align: center">
+    <h2>Contacto</h2>
+    <br>
+    <form>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="firstName" style="width: 100%">
+            <input type="text" class="form-control" id="firstName" placeholder="Nombre">
+          </label>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="email" style="width: 100%">
+            <input type="email" class="form-control" id="email" placeholder="Email">
+          </label>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label for="comments" style="width: 100%">
+            <textarea class="form-control" id="comments" placeholder="Comentarios" rows="3"></textarea>
+          </label>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-dark" style="width: 100%" disabled id="submitButton">Enviar info</button>
+    </form>
+  
+  </div>
+  </div>
+  
+  
+  <script src="../js/main.js"></script>
+  
+</body>
+
+</html>
