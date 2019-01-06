@@ -17,27 +17,29 @@ $(document).ready(function (){
     res.open("GET", "https://swapi.co/api/people/", true);
     res.send();
 
+
     //----------------------------------------------------------------------------------------------------
     // Hace lo mismo que lo de arriba, pero lo primero es solo con javascript y esto con jquery
     //----------------------------------------------------------------------------------------------------
 
-    // var req = $.ajax({
+    // $.ajax({
     //     method: "GET",
     //     url: "https://swapi.co/api/people/",
     //     async: true,
+    //     success: obtenerPersonajes,
+    //     error: fallo 
     // });
-    
-    // req.done(function(data){
+
+    // function obtenerPersonajes (data){
     //     //obtengo el vector de los personajes proporcionados en la url
     //     var vector = data.results;
     //     //recorro el vector y voy mostrando cada uno de los personajes en la tabla del html
     //     imprimirPersonajes(vector);
-    // });
-    
+    // }
         
-    // req.fail(function (error) {
-    //     console.log(error);
-    // });
+    // function fallo (error) {
+    //     console.log("Readystate:",error.readyState,"status:",error.status);
+    // }
 
 });
 
